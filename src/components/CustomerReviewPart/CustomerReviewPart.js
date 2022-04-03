@@ -15,7 +15,7 @@ const CustomerReviewPart = (props) => {
             <div className="card"> <i className="fa fa-quote-left u-color"></i>
                 <p>{description}</p>
                 <div className="d-flex justify-content-between align-items-center">
-                    <div className="user-about"> <span className="font-weight-bold d-block">{name}</span> <span className="u-color">{designation}</span>
+                    <div className="user-about"> <span className="font-Weight-Bold name-bold d-block">{name}</span> <span className="u-color">{designation}</span>
                         <div className="d-flex flex-row mt-1"> {ratings} </div>
                     </div>
                     <div className="user-image">

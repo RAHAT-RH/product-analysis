@@ -1,5 +1,5 @@
-import { Button } from 'bootstrap';
 import React, { useEffect, useState } from 'react';
+// import useReviews from '../../hooks/useReviews';
 import photo from '../../images/item-06.png'
 import CustomerReviewPart from '../CustomerReviewPart/CustomerReviewPart';
 
@@ -10,6 +10,7 @@ const Home = () => {
         .then(res => res.json())
         .then(data => setReviews(data))
     }, []);
+    // const [reviews] = useReviews();
     return (
         <div className='container'>
             <div className="row my-5">
