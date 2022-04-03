@@ -1,18 +1,26 @@
-import React from 'react';
+import { Button } from 'bootstrap';
+import React, { useEffect, useState } from 'react';
 import photo from '../../images/item-06.png'
+import CustomerReviewPart from '../CustomerReviewPart/CustomerReviewPart';
 
 const Home = () => {
+    const [reviews, setReviews] = useState([]);
+    useEffect(() => {
+        fetch('review.json')
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    }, []);
     return (
         <div className='container'>
             <div className="row my-5">
                 <div className="col-lg-6">
                     <div className="my-5">
-                    <div class="jumbotron py-5">
-                        <h1 class="display-4">Hello, world!</h1>
-                        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>         
+                    <div className="jumbotron py-5">
+                        <h1 className="display-4">Hello, world!</h1>
+                        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>         
                             <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                            <p class="lead">
-                                <a class="btn btn-primary btn-lg" href="?" role="button">Learn more</a>
+                            <p className="lead">
+                                <a className="btn btn-dark btn-lg" href="?" role="button">Learn more</a>
                             </p>
                     </div>
                     </div>
@@ -25,7 +33,15 @@ const Home = () => {
             {/* Banner Section End */}
 
             <section className="review">
-                <h2 className='text-center display-6 font-weight-bold'>Customers Reviews</h2>
+                <h2 className='text-center display-6 font-weight-bold'>Customers Reviews: {reviews.slice(0,3).length}</h2>
+                <div className="row">
+                    {
+                        reviews.slice(0,3).map(review => <CustomerReviewPart key={review.id} review={review}></CustomerReviewPart>)
+                    }
+                    <div className="button text-center my-5">
+                        <button className='btn btn-dark'>See More Review</button>
+                    </div>
+                </div>
             </section>
 
         </div>
