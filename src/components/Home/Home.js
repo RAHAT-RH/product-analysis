@@ -1,25 +1,32 @@
-import React, { useEffect, useState } from 'react';
-// import useReviews from '../../hooks/useReviews';
+// import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import useReviews from '../../hooks/useReviews';
 import photo from '../../images/item-06.png'
 import CustomerReviewPart from '../CustomerReviewPart/CustomerReviewPart';
 
 const Home = () => {
-    const [reviews, setReviews] = useState([]);
-    useEffect(() => {
-        fetch('review.json')
-        .then(res => res.json())
-        .then(data => setReviews(data))
-    }, []);
-    // const [reviews] = useReviews();
+    const navigate = useNavigate();
+    
+    // event handle
+    const allReviewsShow = () =>{
+        navigate('/review');
+    }
+    // const [reviews, setReviews] = useState([]);
+    // useEffect(() => {
+    //     fetch('review.json')
+    //     .then(res => res.json())
+    //     .then(data => setReviews(data))
+    // }, []);
+    const [reviews] = useReviews();
     return (
         <div className='container'>
             <div className="row my-5">
                 <div className="col-lg-6">
                     <div className="my-5">
                     <div className="jumbotron py-5">
-                        <h1 className="display-4">Hello, world!</h1>
-                        <p className="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>         
-                            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                        <h1 className="display-4">Amazon Home Theater System!</h1>
+                        <p className="lead">You can connect your Home Assistant instance in a few simple clicks to Amazon Alexa. With Home Assistant Cloud, You don't have to deal with dynamic Dns, SSl Certificates.</p>         
+                            <p>Just log in vai tthe user interface and a secure connection With the could will be established.</p>
                             <p className="lead">
                                 <a className="btn btn-dark btn-lg" href="?" role="button">Learn more</a>
                             </p>
@@ -40,7 +47,7 @@ const Home = () => {
                         reviews.slice(0,3).map(review => <CustomerReviewPart key={review.id} review={review}></CustomerReviewPart>)
                     }
                     <div className="button text-center my-5">
-                        <button className='btn btn-dark'>See More Review</button>
+                        <button onClick={allReviewsShow} className='btn btn-dark'>See More Review ({reviews.length})</button>
                     </div>
                 </div>
             </section>

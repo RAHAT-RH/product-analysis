@@ -1,20 +1,22 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import CustomLink from '../CustomLink/CustomLink';
+import logo from '../../images/logo.png';
 
 const Header = () => {
     return (
         <div>
             <Navbar bg="dark" expand="lg">
                 <Container>
-                    <NavLink className='py-3 text-white text-decoration-none' to="/home">React-Bootstrap</NavLink>
+                    <NavLink className='py-3 text-white text-decoration-none' to="/home"><img src={logo} width='70' alt="" /></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
-                            <Link className='text-decoration-none text-white me-3'  to="/">Home</Link>
-                            <Link className='text-decoration-none text-white me-3'  to="/review">Review</Link>
-                            <Link className='text-decoration-none text-white me-3'  to="/blog">Blog</Link>
-                            <Link className='text-decoration-none text-white'  to="/about">About</Link>
+                            <CustomLink className='text-decoration-none  me-3'  to="/">Home</CustomLink>
+                            <CustomLink className='text-decoration-none me-3'  to="/review">Review</CustomLink>
+                            <CustomLink className='text-decoration-none  me-3'  to="/blog">Blog</CustomLink>
+                            <CustomLink className='text-decoration-none '  to="/charts">Charts</CustomLink>
                             {/* <Nav.Link href="#link">Link</Nav.Link> */}
                         </Nav>
                     </Navbar.Collapse>
