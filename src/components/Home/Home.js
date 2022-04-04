@@ -25,7 +25,7 @@ const Home = () => {
                 <div className="col-lg-6">
                     <div className="my-5">
                         <div className="jumbotron py-5">
-                            <h1 className="display-4">Amazon Home Theater System!</h1>
+                            <h1 className="display-4">Amazon Home <span className='text-primary'>Theater System!</span></h1>
                             <p className="lead">You can connect your Home Assistant instance in a few simple clicks to Amazon Alexa. With Home Assistant Cloud, You don't have to deal with dynamic Dns, SSl Certificates.</p>
                             <p>Just log in vai the user interface and a secure connection With the could will be established.</p>
                             <p className="lead">
@@ -48,7 +48,7 @@ const Home = () => {
                         reviews.slice(0, 3).map(review => <CustomerReviewPart key={review.id} review={review}></CustomerReviewPart>)
                     }
                     <div className="button text-center my-5">
-                        <button onClick={allReviewsShow} className='btn btn-dark'>See More Review ({reviews.length})</button>
+                        <button onClick={allReviewsShow} className='btn btn-dark'>See More Review </button>
                     </div>
                 </div>
             </section>

@@ -2,7 +2,7 @@ import { Area, AreaChart, Bar, BarChart, CartesianGrid, Legend, Line, LineChart,
 // import { CartesianGrid, Line, LineChart, Tooltip, XAxis, YAxis } from 'recharts';
 
 
-const Charts = () => {
+const DashBoard = () => {
     const data = [
         {
             "month": "Mar",
@@ -43,12 +43,12 @@ const Charts = () => {
     ]
     return (
         <div className='container'>
-            <h1 className='text-center my-4'>Chart</h1>
+            <h1 className='text-center display-6 my-4'>Chart</h1>
             <div className="row">
                 <div className="col-lg-6 border px-3 shadow-lg my-4">
 
                     <AreaChart
-
+                    className='my-5'
                         width={500}
                         height={400}
                         data={data}
@@ -71,7 +71,7 @@ const Charts = () => {
                 </div>
                 <div className="col-lg-6 border  shadow-lg my-4">
 
-                    <BarChart
+                    <BarChart className='my-5'
                         width={500}
                         height={300}
                         data={data}
@@ -95,7 +95,7 @@ const Charts = () => {
                 </div>
                 <div className="col-lg-6 border  shadow-lg my-3">
 
-                    <LineChart width={500} height={300} data={data}>
+                    <LineChart width={500} height={300} data={data} className='my-5'>
                         <CartesianGrid strokeDasharray="3 3" />
                         <XAxis dataKey="month" padding={{ left: 30, right: 30 }} />
                         <YAxis />
@@ -121,4 +121,4 @@ const Charts = () => {
     );
 };
 
-export default Charts;
+export default DashBoard;
