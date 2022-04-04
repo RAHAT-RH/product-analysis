@@ -1,8 +1,15 @@
-# Getting Started with Create React App
+# Amazon Home Theater System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project link
 
-## Available Scripts
+live link: []
+
+## About Amazon Home Theater System
+
+* Use custom link for active route menu.
+* Use External hook.
+* Added reChart line chart, pai chart, area chart, BarChart
+* Use Bootstrap Css
 
 In the project directory, you can run:
 

@@ -10,7 +10,7 @@ const CustomerReviewPart = (props) => {
     return (
         <div className='col-md-4 p-2'>
             <div className="card bg-dark text-white">  
-                <p><FontAwesomeIcon className='u-color' icon={faQuoteLeft}></FontAwesomeIcon>{description}</p>
+                <p><FontAwesomeIcon className='u-color' icon={faQuoteLeft}></FontAwesomeIcon>{description.slice(0,200) + '...'}</p>
                 <div className="d-flex justify-content-between align-items-center">
                     <div className="user-about"> <span className="font-Weight-Bold name-bold d-block">{name}</span> <span className="text-danger">{designation}</span>
                         <div className="d-flex flex-row mt-1 text-danger">Rating: {ratings} </div>
