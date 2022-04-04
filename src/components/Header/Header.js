@@ -9,7 +9,7 @@ const Header = () => {
         <div>
             <Navbar bg="dark" expand="lg">
                 <Container>
-                    <NavLink className='py-3 text-white text-decoration-none' to="/home"><img src={logo} width='70' alt="" /></NavLink>
+                    <NavLink className='py-3 text-white text-decoration-none' to="/home"><img src={logo} style={{width: '100px', height: '50px'}} alt="" /></NavLink>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto">
